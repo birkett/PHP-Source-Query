@@ -4,41 +4,18 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/../../vendor/autoload.php';
 
-use Twig\Environment;
-use Twig\Loader\FilesystemLoader;
-use xPaw\SourceQuery\SourceQueryFactory;
+use QueryTool\controllers\IndexController;
 
-$loader = new FilesystemLoader('../private/views');
-$twig = new Environment($loader);
+$page = new IndexController();
 
-$timer = microtime(true);
+if ('POST' === $_SERVER['REQUEST_METHOD']) {
+    echo $page->postAction([
+        'hostname' => filter_input(INPUT_POST, 'hostname', FILTER_SANITIZE_STRING),
+        'port' => filter_input(INPUT_POST, 'port', FILTER_VALIDATE_INT),
+        'engine' => filter_input(INPUT_POST, 'engine', FILTER_SANITIZE_STRING),
+    ]);
 
-$query = SourceQueryFactory::createSourceQuery();
-
-$info = [];
-$rules = [];
-$players = [];
-$exception = null;
-
-try {
-    $query->connect('localhost', 27015);
-    //$query->setUseOldGetChallengeMethod(true); // Use this when players/rules retrieval fails on games like Starbound.
-
-    $info = $query->getInfo();
-    $players = $query->getPlayers();
-    $rules = $query->getRules();
-} catch (Exception $e) {
-    $exception = $e;
-} finally {
-    $query->disconnect();
+    return;
 }
 
-$timer = number_format(microtime(true) - $timer, 4, '.', '');
-
-echo $twig->render('index.html.twig', [
-    'timer' => $timer,
-    'info' => $info,
-    'players' => $players,
-    'rules' => $rules,
-    'exception' => $exception ? $exception->__toString() : null,
-]);
+echo $page->getAction();

@@ -1,5 +1,7 @@
 {% if exception is not null %}
-    <div class="panel panel-error">
-        <pre class="panel-body">{{ exception }}</pre>
+    <div class="alert alert-danger">
+        <h3>{{ exception.message }}</h3>
+        <hr />
+        {{ exception|nl2br }}
     </div>
 {% endif %}

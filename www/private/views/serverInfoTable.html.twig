@@ -1,0 +1,28 @@
+<table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+        <th class="info-column">Server Info</th>
+        <th><span class="label label-{{ timer > 1.0 ? 'danger' : 'success' }}">{{ timer }}s</span></th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for infoKey, infoValue in info %}
+        <tr>
+            <td>{{ infoKey }}</td>
+            <td>
+                {% if infoValue is same as(false) or infoValue is same as(true) %}
+                    {{ infoValue ? 'true' : 'false' }}
+                {% elseif infoValue is iterable %}
+                    <pre>{{ infoValue }}</pre>
+                {% else %}
+                    {{ infoValue }}
+                {% endif %}
+            </td>
+        </tr>
+    {% else %}
+        <tr>
+            <td colspan="2">No information received</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

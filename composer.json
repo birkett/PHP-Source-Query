@@ -35,7 +35,8 @@
 	{
 		"psr-4":
 		{
-			"xPaw\\SourceQuery\\": "SourceQuery/"
+			"xPaw\\SourceQuery\\": "SourceQuery/",
+			"QueryTool\\controllers\\": "www/private/controllers/"
 		}
 	},
 	"scripts": {

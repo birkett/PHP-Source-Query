@@ -1,0 +1,22 @@
+<table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+        <th>Players <span class="label label-info">{{ players|length }}</span></th>
+        <th class="frags-column">Frags</th>
+        <th class="frags-column">Time</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for player in players %}
+        <tr>
+            <td>{{ player.Name }}</td>
+            <td>{{ player.Frags }}</td>
+            <td>{{ player.TimeF }}</td>
+        </tr>
+    {% else %}
+        <tr>
+            <td colspan="3">No players received</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

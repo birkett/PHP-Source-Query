@@ -1,0 +1,19 @@
+<table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+        <th colspan="2">Rules <span class="label label-info">{{ rules|length }}</span></th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for ruleKey, ruleValue in rules %}
+        <tr>
+            <td>{{ ruleKey }}</td>
+            <td>{{ ruleValue }}</td>
+        </tr>
+    {% else %}
+        <tr>
+            <td colspan="2">No rules received</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
