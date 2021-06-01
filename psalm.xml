@@ -8,6 +8,7 @@
     <projectFiles>
         <directory name="SourceQuery" />
         <directory name="Tests" />
+        <directory name="www" />
         <ignoreFiles>
             <directory name="vendor" />
         </ignoreFiles>

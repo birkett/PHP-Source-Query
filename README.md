@@ -91,8 +91,6 @@ Add your server to your favourites in Steam server browser, and if Steam can dis
 	</tr>
 </table>
 
-Also refer to [examples folder](Examples) to work things out.
-
 ## License
     PHP Source Query
     Copyright (C) 2012-2015 Pavel Djundik

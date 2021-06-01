@@ -47,8 +47,8 @@ return (new PhpCsFixer\Config())
     ->setFinder(
         PhpCsFixer\Finder::create()
             ->exclude('vendor')
-            ->in('Examples')
             ->in('SourceQuery')
             ->in('Tests')
+            ->in('www')
     )
 ;

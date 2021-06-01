@@ -1,0 +1,22 @@
+.table {
+    table-layout: fixed;
+    border-top-color: #428BCA;
+}
+
+.table td {
+    overflow-x: auto;
+}
+
+.table thead th {
+    background-color: #428BCA;
+    border-color: #428BCA !important;
+    color: #FFF;
+}
+
+.info-column {
+    width: 120px;
+}
+
+.frags-column {
+    width: 80px;
+}
