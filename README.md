@@ -41,13 +41,16 @@ AppID | Game | Query | RCON | Notes
 70000 | [Dino D-Day](http://store.steampowered.com/app/70000/) | :white_check_mark: | :white_check_mark: | 
 107410 | [Arma 3](http://store.steampowered.com/app/107410/) | :white_check_mark: | :x: | Add +1 to the server port
 115300 | [Call of Duty: Modern Warfare 3](http://store.steampowered.com/app/115300/) | :white_check_mark: | :white_check_mark: | 
+162107 | [DeadPoly](https://store.steampowered.com/app/1621070/) | :white_check_mark: | :x: |
 211820 | [Starbound](http://store.steampowered.com/app/211820/) | :white_check_mark: | :white_check_mark: | Call `setUseOldGetChallengeMethod` method after connecting
 244850 | [Space Engineers](http://store.steampowered.com/app/244850/) | :white_check_mark: | :x: | Add +1 to the server port
+304930 | [Unturned](https://store.steampowered.com/app/304930/) | :white_check_mark: | :x: | Add +1 to the server port
 251570 | [7 Days to Die](http://store.steampowered.com/app/251570) | :white_check_mark: | :x: |
 252490 | [Rust](http://store.steampowered.com/app/252490/) | :white_check_mark: | :x: |
 282440 | [Quake Live](http://store.steampowered.com/app/282440) | :white_check_mark: | :x: | Quake Live uses the ZMQ messaging queue protocol for rcon control.
 346110 | [ARK: Survival Evolved](http://store.steampowered.com/app/346110/) | :white_check_mark: | :white_check_mark: | 
 ~ | [Minecraft](http://www.minecraft.net/) | :x: | :white_check_mark: | 
+108600 | [Project: Zomboid](https://store.steampowered.com/app/108600/) | :white_check_mark: | :white_check_mark: 
 
 Open a pull request if you know another game which supports Source Query and/or RCON protocols.
 

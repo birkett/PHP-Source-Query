@@ -228,7 +228,7 @@ final class SourceQuery
         $this->getChallenge(self::A2S_PLAYER, self::S2A_PLAYER);
 
         $this->socket->write(self::A2S_PLAYER, $this->challenge);
-        $buffer = $this->socket->read(14000); // Moronic Arma 3 developers do not split their packets, so we have to read more data.
+        $buffer = $this->socket->read(14000); // Arma 3 developers do not split their packets, so we have to read more data.
         // This violates the protocol spec, and they probably should fix it: https://developer.valvesoftware.com/wiki/Server_queries#Protocol
 
         $type = $buffer->getByte();
