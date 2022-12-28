@@ -202,10 +202,6 @@ final class SourceRcon extends AbstractRcon
 
             $packetSize = strlen($data2);
 
-            if ($packetSize <= 0) {
-                throw new InvalidPacketException('Read ' . strlen($data) . ' bytes from socket, ' . $remaining . ' remaining', InvalidPacketException::BUFFER_EMPTY);
-            }
-
             $data .= $data2;
             $remaining -= $packetSize;
         }
