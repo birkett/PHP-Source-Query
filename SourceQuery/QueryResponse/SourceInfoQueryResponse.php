@@ -103,10 +103,10 @@ final class SourceInfoQueryResponse
             $server['GameID'] = $buffer->getUnsignedLong() | ($buffer->getUnsignedLong() << 32);
         }
 
-        if (!$buffer->isEmpty()) {
-            throw new InvalidPacketException('GetInfo: unread data? ' . $buffer->remaining() . ' bytes remaining in the buffer. Please report it to the library developer.', InvalidPacketException::BUFFER_NOT_EMPTY);
+        if ($buffer->isEmpty()) { /* @phpstan-ignore-line 'If condition is always false.' */
+            return $server;
         }
 
-        return $server;
+        throw new InvalidPacketException('GetInfo: unread data? ' . $buffer->remaining() . ' bytes remaining in the buffer. Please report it to the library developer.', InvalidPacketException::BUFFER_NOT_EMPTY);
     }
 }

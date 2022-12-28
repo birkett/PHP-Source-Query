@@ -119,7 +119,7 @@ abstract class AbstractSocket implements SocketInterface
         }
 
         $buffer = new Buffer();
-        $data = fread($this->socket, $length);
+        $data = fread($this->socket, abs($length));
 
         if (!$data) {
             throw new SocketException('Failed to open socket.');
@@ -127,7 +127,7 @@ abstract class AbstractSocket implements SocketInterface
 
         $buffer->set($data);
 
-        $this->readInternal($buffer, $length, [$this, 'sherlock']);
+        $this->readInternal($buffer, abs($length), [$this, 'sherlock']);
 
         return $buffer;
     }
@@ -156,7 +156,7 @@ abstract class AbstractSocket implements SocketInterface
             throw new InvalidPacketException('Socket not open.');
         }
 
-        $data = fread($this->socket, $length);
+        $data = fread($this->socket, abs($length));
 
         if (!$data) {
             throw new InvalidPacketException('Empty data from packet.');

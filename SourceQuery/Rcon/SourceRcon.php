@@ -179,7 +179,7 @@ final class SourceRcon extends AbstractRcon
             throw new InvalidPacketException('Rcon read: Failed to read any data from socket', InvalidPacketException::BUFFER_EMPTY);
         }
 
-        $packetSize = $buffer->getLong();
+        $packetSize = abs($buffer->getLong());
 
         $socketData = fread($this->rconSocket, $packetSize);
 
