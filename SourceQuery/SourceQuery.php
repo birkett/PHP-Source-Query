@@ -152,9 +152,9 @@ final class SourceQuery
      * Sends ping packet to the server
      * NOTE: This may not work on some games (TF2 for example).
      *
-     * @throws SocketException
-     *
      * @return bool True on success, false on failure
+     *
+     * @throws SocketException
      */
     public function ping(): bool
     {
@@ -171,10 +171,10 @@ final class SourceQuery
     /**
      * Get server information.
      *
+     * @return array Returns an array with information on success
+     *
      * @throws InvalidPacketException
      * @throws SocketException
-     *
-     * @return array Returns an array with information on success
      */
     public function getInfo(): array
     {
@@ -214,10 +214,10 @@ final class SourceQuery
     /**
      * Get players on the server.
      *
+     * @return array Returns an array with players on success
+     *
      * @throws InvalidPacketException
      * @throws SocketException
-     *
-     * @return array Returns an array with players on success
      */
     public function getPlayers(): array
     {
@@ -243,10 +243,10 @@ final class SourceQuery
     /**
      * Get rules (cvars) from the server.
      *
+     * @return array Returns an array with rules on success
+     *
      * @throws InvalidPacketException
      * @throws SocketException
-     *
-     * @return array Returns an array with rules on success
      */
     public function getRules(): array
     {
@@ -293,11 +293,11 @@ final class SourceQuery
      *
      * @param string $command Command to execute
      *
+     * @return string Answer from server in string
+     *
      * @throws InvalidPacketException
      * @throws SocketException
      * @throws AuthenticationException
-     *
-     * @return string Answer from server in string
      */
     public function rcon(string $command): string
     {

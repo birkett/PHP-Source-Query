@@ -108,7 +108,7 @@ final class GoldSourceRcon extends AbstractRcon
 
                 $packet = $buffer->get();
                 $stringBuffer .= $packet;
-                //$stringBuffer .= SubStr( $packet, 0, -2 );
+                // $stringBuffer .= SubStr( $packet, 0, -2 );
 
                 // Let's assume if this packet is not long enough, there are no more after this one.
                 $readMore = strlen($packet) > 1000; // use 1300?

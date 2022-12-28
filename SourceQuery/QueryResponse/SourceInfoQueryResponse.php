@@ -15,7 +15,6 @@ declare(strict_types=1);
 
 namespace xPaw\SourceQuery\QueryResponse;
 
-use RuntimeException;
 use xPaw\SourceQuery\Buffer;
 use xPaw\SourceQuery\Exception\InvalidPacketException;
 
@@ -77,7 +76,7 @@ final class SourceInfoQueryResponse
                     $steamIdInstance = gmp_abs($steamIdInstance);
                     $steamId = gmp_strval(gmp_or($steamIdLower, gmp_mul($steamIdInstance, gmp_pow(2, 32))));
                 } else {
-                    throw new RuntimeException('Either 64-bit PHP installation or "gmp" module is required to correctly parse server\'s steamid.');
+                    throw new \RuntimeException('Either 64-bit PHP installation or "gmp" module is required to correctly parse server\'s steamid.');
                 }
             } else {
                 $steamId = $steamIdLower | ($steamIdInstance << 32);

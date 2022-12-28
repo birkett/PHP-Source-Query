@@ -135,7 +135,7 @@ final class SourceRcon extends AbstractRcon
         if (strlen($data) >= 4000) {
             $this->write(SourceQuery::SERVERDATA_REQUESTVALUE);
 
-            do {
+            while (true) {
                 $buffer = $this->read();
 
                 $buffer->getLong(); // RequestID.
@@ -151,7 +151,7 @@ final class SourceRcon extends AbstractRcon
                 }
 
                 $data .= $data2;
-            } while (true);
+            }
         }
 
         return rtrim($data, "\0");

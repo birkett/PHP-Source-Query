@@ -14,6 +14,7 @@ use xPaw\SourceQuery\SourceQuery;
 
 /**
  * @internal
+ *
  * @covers \xPaw\SourceQuery\SourceQuery
  *
  * @psalm-suppress PropertyNotSetInConstructor

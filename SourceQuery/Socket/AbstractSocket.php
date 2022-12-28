@@ -54,9 +54,9 @@ abstract class AbstractSocket implements SocketInterface
     }
 
     /**
-     * @throws InvalidArgumentException
-     *
      * @return resource
+     *
+     * @throws InvalidArgumentException
      */
     public function getSocket()
     {
@@ -107,10 +107,10 @@ abstract class AbstractSocket implements SocketInterface
     /**
      * Reads from socket and returns Buffer.
      *
+     * @return Buffer Buffer
+     *
      * @throws InvalidPacketException
      * @throws SocketException
-     *
-     * @return Buffer Buffer
      */
     public function read(int $length = 1400): Buffer
     {

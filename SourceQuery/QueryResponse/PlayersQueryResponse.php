@@ -34,7 +34,7 @@ class PlayersQueryResponse
             $player['Name'] = $buffer->getString();
             $player['Frags'] = $buffer->getLong();
             $player['Time'] = (int) $buffer->getFloat();
-            $player['TimeF'] = gmdate(($player['Time'] > 3600 ? 'H:i:s' : 'i:s'), $player['Time']);
+            $player['TimeF'] = gmdate($player['Time'] > 3600 ? 'H:i:s' : 'i:s', $player['Time']);
 
             $players[] = $player;
         }

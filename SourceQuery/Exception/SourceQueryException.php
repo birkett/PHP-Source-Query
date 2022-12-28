@@ -17,7 +17,7 @@ namespace xPaw\SourceQuery\Exception;
 
 use Exception;
 
-abstract class SourceQueryException extends Exception
+abstract class SourceQueryException extends \Exception
 {
     // Base exception class.
 }
